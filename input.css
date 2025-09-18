@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+    --color-strongCyan: hsl(172, 67%, 45%);
+    --color-lightBlue: hsl(223, 31%, 20%);
+    --color-drakGrayishBlue: hsl(224, 23%, 55%);
+    --color-grayishBlue: hsl(225, 21%, 49%);
+    --font-sans: Bai Jamjuree, sans-serif;;
+}
+
+.section-container {
+    @apply max-w-6xl mx-auto px-10  ;
+}
+
+h3 {
+    @apply text-3xl text-drakGrayishBlue font-bold mb-8 md:text-4xl text-center;
+}
+
+p {
+    @apply max-w-3xl mx-auto text-grayishBlue mb-8;
+}
+
+.button-container {
+    @apply  flex flex-col justify-center space-y-6 md:flex-row md:space-y-0 md:space-x-4 text-white;
+}
+
+
+
+body {
+    background-image: url("./images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media(max-width: 576px) {
+    body {
+    background-image: url("./images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+}
+
+.ficon:hover {
+    filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(101%) contrast(94%);
+}
