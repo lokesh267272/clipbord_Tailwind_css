@@ -1,45 +1,53 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
 @theme {
-    --color-strongCyan: hsl(172, 67%, 45%);
-    --color-lightBlue: hsl(223, 31%, 20%);
-    --color-drakGrayishBlue: hsl(224, 23%, 55%);
-    --color-grayishBlue: hsl(225, 21%, 49%);
-    --font-sans: Bai Jamjuree, sans-serif;;
+  /* Custom breakpoints */
+  --sm: 480px;
+  --md: 768px;
+  --lg: 976px;
+  --xl: 1440px;
+
+  /* Custom fonts */
+  --font-sans: "Josefin Sans", sans-serif;
+  --font-alata: "Alata", sans-serif;
+  --letterspacing-widest: 0.3em;
 }
 
-.section-container {
-    @apply max-w-6xl mx-auto px-10  ;
-}
-
-h3 {
-    @apply text-3xl text-drakGrayishBlue font-bold mb-8 md:text-4xl text-center;
-}
-
-p {
-    @apply max-w-3xl mx-auto text-grayishBlue mb-8;
-}
-
-.button-container {
-    @apply  flex flex-col justify-center space-y-6 md:flex-row md:space-y-0 md:space-x-4 text-white;
-}
-
-
-
-body {
-    background-image: url("./images/bg-header-desktop.png");
+#hero {
+    background-image: url("../images/desktop/image-hero.jpg");
+    background-size: cover; 
     background-repeat: no-repeat;
-    background-size: contain;
 }
 
-@media(max-width: 576px) {
-    body {
-    background-image: url("./images/bg-header-mobile.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+.btn {
+  @apply uppercase text-sm  px-10 py-2 border-2 border-black font-alata font-bold tracking-widest my-0 hover:bg-black hover:text-white;
+}
+
+.item-container {
+  @apply flex flex-col justify-between space-y-6 w-full text-2xl md:space-y-0 md:space-x-8 md:flex-row mt-10;
+}
+
+.item {
+  @apply  relative overflow-hidden md:w-1/4;
+}
+
+.item-gradient {
+  @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+}
+
+h5 {
+  @apply absolute text-white px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
+}
+@media (max-width: 576px) {
+    #hero {
+      background-image: url("../images/mobile/image-hero.jpg");
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center center;
+    
+    
+    
     }
-}
-
-.ficon:hover {
-    filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(101%) contrast(94%);
 }
